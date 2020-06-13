@@ -7,6 +7,12 @@ $( document ).ready(function() {
 	$('#login_but').click(onloginbutclick)
 	$('#forgot_password').click(onforgotpwdclick)
 	$('#new_user').click(onnewuserclick)
+	$('#confirm_order').click(onconfirmorderclick)
+	$('#menutocart').click(oncartclick)
+	$('#carttomenu').click(onmenuclick)
+	$('#carttoorder').click(oncarttoorderclick)
+
+
 });
 
 function removeactive(){
@@ -22,6 +28,18 @@ function removeactive(){
 	$("#cart_div").addClass("hide");
 	$("#orders_div").addClass("hide");
 	$("#order_form_div").addClass("hide");
+	$("#confirm_order_div").addClass("hide");
+
+}
+
+function oncarttoorderclick(){		
+ 	removeactive();
+	$("#order_form_div").removeClass("hide");
+}
+
+function onconfirmorderclick(){		
+ 	removeactive();
+	$("#confirm_order_div").removeClass("hide");
 }
 
 function onloginclick(){		

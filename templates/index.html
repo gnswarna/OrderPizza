@@ -64,7 +64,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button"  value="Login"></td>
+					<td><input type="button"  value="Update Password"></td>
 				</tr>
 				
 			</table>
@@ -87,7 +87,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button"  value="Login"></td>
+					<td><input type="button"  value="Register"></td>
 				</tr>
 				
 			</table>
@@ -96,12 +96,21 @@
 		<div class='subdiv' id='menu_div'>
 			<table>
 				<tr><th colspan='2'>Menu</th></tr>
+				<tr>
+					<td></td>
+					<td><input type="button" id='menutocart' value="Cart"></td>
+				</tr>
 			</table>
 		</div>
 
 		<div class='subdiv hide' id='cart_div'>
 			<table>
 				<tr><th colspan='2'>cart</th></tr>
+				<tr>
+					<td><input type="button" id='carttomenu' style='float:right' value="Menu"></td>
+					<td><input type="button" id='carttoorder' value="Next"></td>
+				</tr>
+				
 			</table>
 		</div>
 
@@ -113,24 +122,44 @@
 
 		<div class='subdiv hide' id='order_form_div'>
 			<table>
-				<tr><th colspan='2'>order form</th></tr>
 				<tr>
-					<td><label for="email"><b>Email : </b></label></td>
-					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+					<td><label for="fname"><b>Full Name : </b></label></td>
+					<td><input type="text" placeholder="Enter First Name and Last Name" name="fname" required></td>
 				</tr>
 				<tr>
-					<td><label for="psw"><b>Password : </b></label></td>
-					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+					<td><label for="phno"><b>Phone Number : </b></label></td>
+					<td><input type="text" placeholder="Enter Phone Number" name="phno" required></td>
 				</tr>
 				<tr>
-					<td><label for="repsw"><b>Reenter Password : </b></label></td>
-					<td><input type="password" placeholder="ReEnter Password" name="repsw" required></td>
+					<td><label ><b>Address : </b></label></td>
+					<td><textarea name="address" placeholder="Enter street Name - House Number, City, State, Country, Pincode" required></textarea></td>
+				</tr>
+				<tr>
+					<td><label ><b>Description : </b></label></td>
+					<td><textarea name="description" disabled style='height:100px;' required></textarea></td>
+				</tr>
+				<tr>
+					<td><label ><b>Sub Total : </b></label></td>
+					<td><div><p>$24 / €24</p></div></td>
+				</tr>
+				<tr>
+					<td><label ><b>Delivary Charges: </b></label></td>
+					<td><div><p>$4 / €4</p></div></td>
+				</tr>
+				<tr>
+					<td><label ><b>Total : </b></label></td>
+					<td><div><p>$28 / €28</p></div></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button"  value="Login"></td>
+					<td><input type="button" id='confirm_order' value="Confirm Order"></td>
 				</tr>
 				
+			</table>
+		</div>
+		<div class='subdiv hide' id='confirm_order_div'>
+			<table>
+				<tr><th colspan='2'>Thank you for your order, please pay cash on delivary</th></tr>				
 			</table>
 		</div>
 	</div>

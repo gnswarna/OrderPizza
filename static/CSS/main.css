@@ -21,6 +21,7 @@ h1{
 	width: 90%;
 	height: 30px;
 	margin: 5px auto 0px auto;
+	padding:5px;
 }
 
 ul.horizontal{
@@ -39,6 +40,7 @@ ul.horizontal li{
 
 ul.horizontal li.active{
 	color: white;
+	font-weight: bold;
 }
 
 
@@ -56,19 +58,19 @@ ul.horizontal li.hide{
 }
 
 .maindiv{
-	background-color:#fffa8a;
+	background-color:white;
 	color: gray;
 	width: 88.5%;
 	height: 85%;
 	margin: 0px auto;
 	position: absolute; 
-   	top: 70px; 
+   	top: 80px; 
 	left:5.7%;
 	overflow: hidden;
 }
 
 .subdiv{
-	background-color:#dba24a;
+	background-color: white;
 	color: gray;
 	width: 100%;
 	height: 100%;
@@ -93,7 +95,7 @@ td {
 th {
   	padding: 15px 25px;
 	text-align: center;
-	color:#ce0000;
+	color: #007BAD;
 	font-size: 18px;
 }
 
@@ -104,9 +106,24 @@ input[type=text],input[type=password]{
 	margin:5px;
 }
 
+textarea {
+  	resize: none;
+	float: left;
+	width:200px;
+	height:40px;
+	padding: 10px;
+	margin:5px;
+}
+
+p{
+	float: left;
+	padding: 0px;
+	margin:5px;
+}
+
 input[type=button]{
 	float: left;
-	width:100px;
+	width:150px;
 	margin:5px;
 	color: white;
 	background-color: #007BAD;
@@ -115,7 +132,7 @@ input[type=button]{
   	text-align: center;
   	text-decoration: none;
   	display: inline-block;
-  	font-size: 16px;
+  	font-size: 14px;
   	cursor: pointer;
 }
 
