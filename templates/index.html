@@ -8,8 +8,132 @@
 </head>
 <html>
    <body>
-      <div class='top_bar'>
-      	<h1 >Welcome To Pizza Ordering portal</h1>
-      </div>
+	<div class='top_bar'>
+      		<h1 >Welcome To Pizza Ordering portal</h1>
+	</div>
+	<div class='menu_bar'>
+		<ul class='horizontal'>
+			<li style='cursor: text;'>Welcome :<span class='name' id='user_name'> Guest</span></li>
+			<li id='orders' class='hide'><div >Orders</div></li>
+			<li id='cart'><div>Cart</div></li>
+			<li id='menu' class='active'><div>Menu</div></li>
+			<li id='login'><div>Login</div></li>
+		</ul>
+	</div>
+	<div class='maindiv'>
+		<div class='subdiv hide' id='login_div'>
+			<table>
+				<tr><th colspan='2'>Login Form</th></tr>
+				<tr>
+					<td><label for="email"><b>Email : </b></label></td>
+					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+				</tr>
+				<tr>
+					<td><label for="psw"><b>Password : </b></label></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button" id='login_but' value="Login"></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td ><a id='forgot_password'>Forgot Password ? </a></td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td><a id='new_user'>New User ?</a></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class='subdiv hide' id='forgotpwd_div'>
+			<table>
+				<tr><th colspan='2'>Forgot Password Form</th></tr>
+				<tr>
+					<td><label for="email"><b>Email : </b></label></td>
+					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+				</tr>
+				<tr>
+					<td><label for="psw"><b>Password : </b></label></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+				</tr>
+				<tr>
+					<td><label for="repsw"><b>Reenter Password : </b></label></td>
+					<td><input type="password" placeholder="ReEnter Password" name="repsw" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button"  value="Login"></td>
+				</tr>
+				
+			</table>
+		</div>
+
+		<div class='subdiv hide' id='newuser_div'>
+			<table>
+				<tr><th colspan='2'>Registration Form</th></tr>
+				<tr>
+					<td><label for="email"><b>Email : </b></label></td>
+					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+				</tr>
+				<tr>
+					<td><label for="psw"><b>Password : </b></label></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+				</tr>
+				<tr>
+					<td><label for="repsw"><b>Reenter Password : </b></label></td>
+					<td><input type="password" placeholder="ReEnter Password" name="repsw" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button"  value="Login"></td>
+				</tr>
+				
+			</table>
+		</div>
+
+		<div class='subdiv' id='menu_div'>
+			<table>
+				<tr><th colspan='2'>Menu</th></tr>
+			</table>
+		</div>
+
+		<div class='subdiv hide' id='cart_div'>
+			<table>
+				<tr><th colspan='2'>cart</th></tr>
+			</table>
+		</div>
+
+		<div class='subdiv hide' id='orders_div'>
+			<table>
+				<tr><th colspan='2'>orders</th></tr>				
+			</table>
+		</div>
+
+		<div class='subdiv hide' id='order_form_div'>
+			<table>
+				<tr><th colspan='2'>order form</th></tr>
+				<tr>
+					<td><label for="email"><b>Email : </b></label></td>
+					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+				</tr>
+				<tr>
+					<td><label for="psw"><b>Password : </b></label></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+				</tr>
+				<tr>
+					<td><label for="repsw"><b>Reenter Password : </b></label></td>
+					<td><input type="password" placeholder="ReEnter Password" name="repsw" required></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="button"  value="Login"></td>
+				</tr>
+				
+			</table>
+		</div>
+	</div>
+
    </body>
 </html>
