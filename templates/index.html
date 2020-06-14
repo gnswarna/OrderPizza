@@ -26,11 +26,11 @@
 				<tr><th colspan='2'>Login Form</th></tr>
 				<tr>
 					<td><label for="email"><b>Email : </b></label></td>
-					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+					<td><input type="text" placeholder="Enter Email" name="email" required id='login_email'></td>
 				</tr>
 				<tr>
 					<td><label for="psw"><b>Password : </b></label></td>
-					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" id='login_pwd' required></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -52,19 +52,19 @@
 				<tr><th colspan='2'>Forgot Password Form</th></tr>
 				<tr>
 					<td><label for="email"><b>Email : </b></label></td>
-					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+					<td><input type="text" placeholder="Enter Email" name="email" id='forgotpwd_email' required></td>
 				</tr>
 				<tr>
 					<td><label for="psw"><b>Password : </b></label></td>
-					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" id='forgotpwd_pwd' required></td>
 				</tr>
 				<tr>
 					<td><label for="repsw"><b>Reenter Password : </b></label></td>
-					<td><input type="password" placeholder="ReEnter Password" name="repsw" required></td>
+					<td><input type="password" placeholder="ReEnter Password" name="repsw" id='forgotpwd_repwd' required></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button"  value="Update Password"></td>
+					<td><input type="button"  value="Update Password" id='update_pwd'></td>
 				</tr>
 				
 			</table>
@@ -75,19 +75,19 @@
 				<tr><th colspan='2'>Registration Form</th></tr>
 				<tr>
 					<td><label for="email"><b>Email : </b></label></td>
-					<td><input type="text" placeholder="Enter Email" name="email" required></td>
+					<td><input type="text" placeholder="Enter Email" name="email" id='newuser_email' required></td>
 				</tr>
 				<tr>
 					<td><label for="psw"><b>Password : </b></label></td>
-					<td><input type="password" placeholder="Enter Password" name="psw" required></td>
+					<td><input type="password" placeholder="Enter Password" name="psw" id='newuser_pwd' required></td>
 				</tr>
 				<tr>
 					<td><label for="repsw"><b>Reenter Password : </b></label></td>
-					<td><input type="password" placeholder="ReEnter Password" name="repsw" required></td>
+					<td><input type="password" placeholder="ReEnter Password" name="repsw" id='newuser_repwd' required></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button"  value="Register"></td>
+					<td><input type="button" id='register'  value="Register"></td>
 				</tr>
 				
 			</table>
@@ -124,19 +124,19 @@
 			<table>
 				<tr>
 					<td><label for="fname"><b>Full Name : </b></label></td>
-					<td><input type="text" placeholder="Enter First Name and Last Name" name="fname" required></td>
+					<td><input type="text" placeholder="Enter First Name and Last Name" name="fname" id='order_name' required></td>
 				</tr>
 				<tr>
 					<td><label for="phno"><b>Phone Number : </b></label></td>
-					<td><input type="text" placeholder="Enter Phone Number" name="phno" required></td>
+					<td><input type="text" placeholder="Enter Phone Number" name="phno" id='order_phoneno' required></td>
 				</tr>
 				<tr>
 					<td><label ><b>Address : </b></label></td>
-					<td><textarea name="address" placeholder="Enter street Name - House Number, City, State, Country, Pincode" required></textarea></td>
+					<td><textarea name="address" placeholder="Enter street Name - House Number, City, State, Country, Pincode" required id='order_address'></textarea></td>
 				</tr>
 				<tr>
 					<td><label ><b>Description : </b></label></td>
-					<td><textarea name="description" disabled style='height:100px;' required></textarea></td>
+					<td><textarea name="description" disabled style='height:100px;' id='order_description' required></textarea></td>
 				</tr>
 				<tr>
 					<td><label ><b>Sub Total : </b></label></td>

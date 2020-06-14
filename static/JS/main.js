@@ -11,6 +11,10 @@ $( document ).ready(function() {
 	$('#menutocart').click(oncartclick)
 	$('#carttomenu').click(onmenuclick)
 	$('#carttoorder').click(oncarttoorderclick)
+	$('#login_email').change(onloginemailchange)
+	$('#update_pwd').click(onupdatepwdclick)
+	$('#register').click(onregisterclick)
+
 
 
 });
@@ -38,8 +42,24 @@ function oncarttoorderclick(){
 }
 
 function onconfirmorderclick(){		
- 	removeactive();
-	$("#confirm_order_div").removeClass("hide");
+	name = $('#order_name').val();
+	phoneno = $('#order_phoneno').val();	
+	address = $('#order_address').val();
+	if(name && phoneno && address){
+		if(validatephone(phoneno)){
+			removeactive();
+			$("#confirm_order_div").removeClass("hide");
+		}
+		else{
+			alert('Entered Phone Number is Wrong');
+		}
+		
+	}
+	else{
+		alert('name , phone number and address should not be empty..');
+	}
+
+ 	
 }
 
 function onloginclick(){		
@@ -60,12 +80,21 @@ function onnewuserclick(){
 	$("#newuser_div").removeClass("hide");
 }
 
-function onloginbutclick(){		
- 	removeactive();
-	$("#menu").addClass("active");
-	$("#menu_div").removeClass("hide");
-	$("#login").addClass("hide");
-	$("#orders").removeClass("hide");
+function onloginbutclick(){
+	email = $('#login_email').val();
+	password = $('#login_pwd').val();	
+	if(email && password){
+		removeactive();
+		$("#menu").addClass("active");
+		$("#menu_div").removeClass("hide");
+		$("#login").addClass("hide");
+		$("#orders").removeClass("hide");
+		$('#user_name').text(email);
+	}
+	else{
+		alert('Email and Password should not be empty..');
+	}
+ 	
 }
 
 function onordersclick(){
@@ -86,3 +115,79 @@ function onmenuclick(){
 	$("#menu_div").removeClass("hide");
 }
 
+function validateEmail(email) {
+	var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+  	return emailReg.test( email );
+}
+
+
+function validatephone(number){
+	var regex = /^[0-9\s]*$/;
+	return regex.test(number);
+}
+
+function onloginemailchange(){
+	email = $('#login_email').val()
+	if(validateEmail(email)){
+		console.log(email)
+	}
+	else{
+		alert('Please enter a valid Email-id')
+	}
+
+}
+
+function onloginemailchange(){
+	email = $('#login_email').val()
+	if(validateEmail(email)){
+		console.log(email)
+	}
+	else{
+		alert('Please enter a valid Email-id')
+	}
+
+}
+
+function onupdatepwdclick(){
+	email = $('#forgotpwd_email').val();
+	password = $('#forgotpwd_pwd').val();
+	repassword = $('#forgotpwd_repwd').val();
+
+	if(email && password && repassword){
+		if(!validateEmail(email)){
+			alert('Please enter a valid Email-id');
+		}
+		if(password != repassword){
+			alert('Password and Re-password should be same..');
+		}
+		if(validateEmail(email) && password == repassword){
+			alert('Password updated successfully.');
+		}
+	}
+	else{
+		alert('Email , Password and Re-password should not be empty..');
+	}
+	
+}
+
+function onregisterclick(){
+
+	email = $('#newuser_email').val();
+	password = $('#newuser_pwd').val();
+	repassword = $('#newuser_repwd').val();
+
+	if(email && password && repassword){
+		if(!validateEmail(email)){
+			alert('Please enter a valid Email-id');
+		}
+		if(password != repassword){
+			alert('Password and Re-password should be same..');
+		}
+		if(validateEmail(email) && password == repassword){
+			alert('Register successfully.');
+		}
+	}
+	else{
+		alert('Email , Password and Re-password should not be empty..');
+	}
+}
