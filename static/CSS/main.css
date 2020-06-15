@@ -145,3 +145,98 @@ a{
 	padding: 5px;
 	cursor: pointer;
 }
+
+img{
+	width:100px;
+	height:100px;
+	float:left;
+	padding:5px 20px 5px 5px;
+	border-radius: 20px;
+}
+
+img.small_img{
+
+	width:40px;
+	height:40px;
+	
+}
+
+.description{
+
+	width:50%;
+	height:50px;
+	float:left;
+	padding:5px;
+	text-align: left;
+}
+
+.pizza_name{
+	color:#ce0000;
+	font-size:24px;
+}
+
+.small_icons{
+	width:20px;
+	height:20px;
+	padding: 50px 20px 10px 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+input[type=number]{
+	-moz-appearance: textfield;
+	width:30px;
+	height:30px;
+	display: inline-block;
+	margin: 40px 0px 0px 0px;
+	padding: 0px;
+	text-align:center;
+	float: left;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.cost{
+
+	width:80px;
+	height:50px;
+	float:left;
+	padding:5px;
+	margin: 45px 0px 0px 10px;
+	text-align: left;
+}
+
+.cart_cost{
+
+	width:80px;
+	height:50px;
+	float:left;
+	padding:5px;
+	margin: 10px 0px 0px 10px;
+	text-align: left;
+}
+
+.cart_small_icons{
+	width:20px;
+	height:20px;
+	padding: 15px 20px 10px 20px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+input[type=number].cart{
+	-moz-appearance: textfield;
+	width:30px;
+	height:30px;
+	display: inline-block;
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+	text-align:center;
+	float: left;
+}
