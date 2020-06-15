@@ -14,10 +14,10 @@
 	<div class='menu_bar'>
 		<ul class='horizontal'>
 			<li style='cursor: text;'>Welcome :<span class='name' id='user_name'> Guest</span></li>
-			<li id='orders' class='hide'><div >Orders</div></li>
-			<li id='cart'><div>Cart</div></li>
-			<li id='menu' class='active'><div>Menu</div></li>
-			<li id='login'><div>Login</div></li>
+			<li id='orders' onclick="onordersclick()" class='hide'><div >Orders</div></li>
+			<li id='cart' onclick="oncartclick()" ><div id='cart_number'>Cart</div></li>
+			<li id='menu' onclick="onmenuclick()" class='active'><div>Menu</div></li>
+			<li id='login' onclick="onloginclick()"><div>Login</div></li>
 		</ul>
 	</div>
 	<div class='maindiv'>
@@ -26,7 +26,7 @@
 				<tr><th colspan='2'>Login Form</th></tr>
 				<tr>
 					<td><label for="email"><b>Email : </b></label></td>
-					<td><input type="text" placeholder="Enter Email" name="email" required id='login_email'></td>
+					<td><input type="text" placeholder="Enter Email" name="email" required id='login_email' onchange='onloginemailchange()'></td>
 				</tr>
 				<tr>
 					<td><label for="psw"><b>Password : </b></label></td>
@@ -34,15 +34,15 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button" id='login_but' value="Login"></td>
+					<td><input type="button" id='login_but' onclick='onloginbutclick()' value="Login"></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td ><a id='forgot_password'>Forgot Password ? </a></td>
+					<td ><a id='forgot_password' onclick='onforgotpwdclick()'>Forgot Password ? </a></td>
 				</tr>
 				<tr>
 					<td ></td>
-					<td><a id='new_user'>New User ?</a></td>
+					<td><a id='new_user' onclick='onnewuserclick()'>New User ?</a></td>
 				</tr>
 			</table>
 		</div>
@@ -64,7 +64,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button"  value="Update Password" id='update_pwd'></td>
+					<td><input type="button"  value="Update Password" id='update_pwd' onclick='onupdatepwdclick()'></td>
 				</tr>
 				
 			</table>
@@ -87,7 +87,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button" id='register'  value="Register"></td>
+					<td><input type="button" id='register'  value="Register" onclick='onregisterclick()'></td>
 				</tr>
 				
 			</table>
@@ -101,9 +101,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='1_name'>spicy pepperoni pizza</span><br><br>spicy pepperoni pizza with cheese, mushrooms, ham, pepperoni, salami and red hot chilly peppers</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='1_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='1_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='1_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='1_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='1_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='1_minus' onclick="onminusclick(this)">
 						<div class='cost' id='1_cost'>€10 / $12</div>
 					</td>
 				</tr>
@@ -114,9 +114,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='2_name'>pizza with ham</span><br><br>pizza with ham, olives and vegetables</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='2_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='2_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='2_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='2_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='2_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='2_minus' onclick="onminusclick(this)">
 						<div class='cost' id='2_cost'>€9 / $11</div>
 					</td>
 				</tr>
@@ -127,9 +127,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='3_name'>delicious fresh chicken pizza </span><br><br>delicious fresh pizza chicken, ham, tomato</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='3_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='3_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='3_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='3_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='3_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='3_minus' onclick="onminusclick(this)">
 						<div class='cost' id='3_cost'>€12 / $13</div>
 					</td>
 				</tr>
@@ -142,9 +142,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='5_name'>pizza with mushrooms and cheese</span><br><br>pizza with ham, mushrooms, cheese and sweet pepper</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='5_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='5_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='5_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='5_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='5_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='5_minus' onclick="onminusclick(this)">
 						<div class='cost' id='5_cost'>€11 / $12</div>
 					</td>
 				</tr>
@@ -155,9 +155,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='6_name'>pizza with salami</span><br><br>home pizza with salami and mozzarella</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='6_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='6_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='6_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='6_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='6_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='6_minus' onclick="onminusclick(this)">
 						<div class='cost' id='6_cost'>€12 / $14</div>
 					</td>
 				</tr>
@@ -168,9 +168,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='7_name'>pizza with caviar</span><br><br>pizza with caviar</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='7_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='7_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='7_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='7_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='7_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='7_minus' onclick="onminusclick(this)">
 						<div class='cost' id='7_cost'>€10 / $12</div>
 					</td>
 				</tr>
@@ -180,9 +180,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='8_name'>tasty pizza with vegetables</span><br><br>tasty pizza with vegetables and basil</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='8_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='8_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='8_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='8_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='8_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='8_minus' onclick="onminusclick(this)">
 						<div class='cost' id='8_cost'>€11 / $12</div>
 					</td>
 				</tr>
@@ -193,9 +193,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='9_name'>hot pizza slice with pepperoni</span><br><br>hot pizza slice with pepperoni cheese mozzarella and tomato</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='9_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='9_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='9_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='9_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='9_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='9_minus' onclick="onminusclick(this)">
 						<div class='cost' id='9_cost'>€10 / $12</div>
 					</td>
 				</tr>
@@ -206,9 +206,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='10_name'>mozzarella italian pizza</span><br><br>pizza with mushrooms, broccoli, cherry tomatoes, red pepper, black olives and mozzarella italian pizza</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='10_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='10_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='10_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='10_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='10_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='10_minus' onclick="onminusclick(this)">
 						<div class='cost' id='10_cost'>€12 / $14</div>
 					</td>
 				</tr>
@@ -219,9 +219,9 @@
 					
 						<div class='description' ><span class='pizza_name' id='11_name'>pepperoni pizza</span><br><br>pepperoni pizza with fresh arugula</div>
 					
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='11_plus'>
-						<input type="number" min="0" value=0 placeholder="0"  id='11_text'>
-						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='11_minus'>
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='11_plus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 placeholder="0"  id='11_text' onchange="ontextclick(this)">
+						<img class='small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='11_minus' onclick="onminusclick(this)">
 						<div class='cost' id='11_cost'>€11 / $12</div>
 					</td>
 				</tr>
@@ -229,7 +229,7 @@
 
 				<tr>
 					<td></td>
-					<td><input type="button" id='menutocart' value="Cart"></td>
+					<td><input type="button" id='menutocart' onclick='oncartclick()' value="Cart"></td>
 				</tr>
 			</table>
 		</div>
@@ -243,9 +243,9 @@
 					
 						<div class='description' ><span class='pizza_name'>spicy pepperoni pizza</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='1_cartplus'>
-						<input type="number" min="0" value=0 class='cart' placeholder="0"  id='1_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='1_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='1_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 class='cart' placeholder="0"  id='1_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='1_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='1_cartcost'>€10 / $12</div>
 					</td>
 				</tr>
@@ -256,9 +256,9 @@
 					
 						<div class='description' ><span class='pizza_name'>pizza with ham</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='2_cartplus'>
-						<input type="number" min="0" value=0 class='cart' placeholder="0"  id='2_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='2_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='2_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 class='cart' placeholder="0"  id='2_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='2_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='2_cartcost'>€9 / $11</div>
 					</td>
 				</tr>
@@ -269,9 +269,9 @@
 					
 						<div class='description' ><span class='pizza_name' >delicious fresh chicken pizza </span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='3_cartplus'>
-						<input type="number" min="0" value=0 class='cart' placeholder="0"  id='3_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='3_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='3_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" value=0 class='cart' placeholder="0"  id='3_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='3_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='3_cartcost'>€12 / $13</div>
 					</td>
 				</tr>
@@ -284,9 +284,9 @@
 					
 						<div class='description' ><span class='pizza_name' >pizza with mushrooms and cheese</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='5_cartplus'>
-						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='5_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='5_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='5_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='5_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='5_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='5_cartcost'>€11 / $12</div>
 					</td>
 				</tr>
@@ -297,9 +297,9 @@
 					
 						<div class='description' ><span class='pizza_name' >pizza with salami</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='6_cartplus'>
-						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='6_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='6_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='6_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='6_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='6_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='6_cartcost'>€12 / $14</div>
 					</td>
 				</tr>
@@ -310,9 +310,9 @@
 					
 						<div class='description' ><span class='pizza_name' >pizza with caviar</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='7_cartplus'>
-						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='7_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='7_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='7_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='7_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='7_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='7_cartcost'>€10 / $12</div>
 					</td>
 				</tr>
@@ -322,9 +322,9 @@
 					
 						<div class='description' ><span class='pizza_name'>tasty pizza with vegetables</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='8_cartplus'>
-						<input type="number" min="0" class='cart'  value=0 placeholder="0"  id='8_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='8_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='8_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" class='cart'  value=0 placeholder="0"  id='8_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='8_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='8_cartcost'>€11 / $12</div>
 					</td>
 				</tr>
@@ -335,9 +335,9 @@
 					
 						<div class='description' ><span class='pizza_name' >hot pizza slice with pepperoni</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='9_cartplus'>
-						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='9_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='9_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='9_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='9_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='9_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='9_cartcost'>€10 / $12</div>
 					</td>
 				</tr>
@@ -348,9 +348,9 @@
 					
 						<div class='description' ><span class='pizza_name' >mozzarella italian pizza</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='10_cartplus'>
-						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='10_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='10_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='10_cartplus' onclick="onplusclick(this)">
+						<input type="number" min="0" class='cart' value=0 placeholder="0"  id='10_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='10_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='10_cartcost'>€12 / $14</div>
 					</td>
 				</tr>
@@ -361,9 +361,9 @@
 					
 						<div class='description' ><span class='pizza_name' >pepperoni pizza</span></div>
 					
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='11_cartplus'>
-						<input type="number" class='cart' min="0" value=0 placeholder="0"  id='11_carttext'>
-						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='11_cartminus'>
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/plus.png') }}" id='11_cartplus' onclick="onplusclick(this)">
+						<input type="number" class='cart' min="0" value=0 placeholder="0"  id='11_carttext' onchange="ontextclick(this)">
+						<img class='cart_small_icons' src = "{{ url_for('static', filename = '/Images/minus.png') }}" id='11_cartminus' onclick="onminusclick(this)">
 						<div class='cart_cost' id='11_cartcost'>€11 / $12</div>
 					</td>
 				</tr>
@@ -375,8 +375,8 @@
 				
 
 				<tr>
-					<td><input type="button" id='carttomenu' style='float:right' value="Menu"></td>
-					<td><input type="button" id='carttoorder' value="Next"></td>
+					<td><input type="button" id='carttomenu' onclick='onmenuclick()' style='float:right' value="Menu"></td>
+					<td><input type="button" id='carttoorder' onclick='oncarttoorderclick()' value="Next"></td>
 				</tr>
 				
 			</table>
@@ -420,7 +420,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="button" id='confirm_order' value="Confirm Order"></td>
+					<td><input type="button" id='confirm_order' onclick='onconfirmorderclick()' value="Confirm Order"></td>
 				</tr>
 				
 			</table>
